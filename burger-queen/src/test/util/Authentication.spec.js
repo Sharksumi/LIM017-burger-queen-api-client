@@ -12,14 +12,8 @@ describe('authentication',() =>{
                     email: "anita.borg@systers.xyz",
                     roles: { admin:true},
                     id: 1 }
-                }  
-      } 
-      // const objUser ={
-      //   email: "anita.borg@systers.xyz",
-      //   roles: {
-      //     admin:true,
-      //   },
-      //   id: 1 }
+                }
+      }
         const userRole= "true";
         const idUser = " 1";
 
