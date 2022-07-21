@@ -2,7 +2,7 @@ import React from "react";
 import { ProductsList } from "./Admin/ProductsList";
 import { useNavigate } from "react-router";
 import { CreateProducts } from "./Admin/CreateProducts";
-import { NavBar } from "./Nav";
+import { NavBar } from "./NavBar";
 
 
 

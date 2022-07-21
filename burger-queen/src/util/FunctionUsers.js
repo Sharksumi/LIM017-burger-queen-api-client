@@ -44,7 +44,7 @@ export const updateUser = (payload) => {
     axios.patch(urlAxiosUsersId(payload.id), payload, config)
       .then((response) => {
 
-           resolve(response.data);
+          resolve(response.data);
           //  console.log(res.data)
       })
       .catch((error) => {

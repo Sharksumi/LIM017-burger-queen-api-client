@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { OrderStatus }  from "./orders/Status.js"
-import { NavBar } from "./Nav";
+import { NavBar } from "./NavBar";
 
 
 const Orders = () => {

@@ -42,7 +42,7 @@ export const getOrders = () => {
   });
 };
 
-// Creación de productos 
+// Creación de productos
 
 export const createNewProduct = (payload) => {
   return new Promise((resolve, reject) =>{
@@ -78,7 +78,6 @@ export const editProduct = (payload) => {
       .then((response) => {
         // console.log(response)
         resolve(response.data)
-        
       })
       .catch((error) => {
         reject(error)

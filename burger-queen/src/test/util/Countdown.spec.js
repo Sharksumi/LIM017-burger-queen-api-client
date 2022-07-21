@@ -2,33 +2,26 @@ import { MyStopwatch } from '../../util/Countdown.js';
 import '@testing-library/jest-dom';
 import Countdown from '../../util/Countdown';
 import React, { createElement } from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
 describe("MyStopwatch", () => {
-        const startTime = 2000
+    const startTime = '2022-06-21 17:52:10'
+    const endTime = '2022-06-21 17:58:10'
+    const duration = Date.parse(endTime) - Date.parse(startTime);
+    // console.log(duration)
+    const result = new Date(duration).toISOString().slice(11, 19);
 
-        const  endTime = 5000
-        //const duration = 18
-         const duration = Date.parse(endTime) - Date.parse(startTime);
-        //const result = ;
-         const result = new Date(duration).toISOString().slice(11, 19);
-        // console.log(result)
+    // console.log(result)
     it("should return total time of preparing plate", () => {
-        // const div = document.createElement('div')
-        const timer = render(
-            <div data-testid="resultCount">
-                <p>Terminado en : </p>
-                <p> 00:00:00 </p>
-                </div>)
+        const watchTimer = MyStopwatch ({ startTime, endTime });
 
-        expect(MyStopwatch({startTime, endTime})).toBe(result)
+        render(watchTimer);
+        expect( screen.getByTestId('resultCount').textContent).toContain(result)
     })
     it(" it should return null when there is no startTime or endTime", () => {
-        
-        const  endTimeNull = null;
-        expect(MyStopwatch(0,endTimeNull)).toBe(null)
-         
+
+        const endTimeNull = null;
+        expect(MyStopwatch(0, endTimeNull)).toBe(null)
+
     })
-
-
 })
