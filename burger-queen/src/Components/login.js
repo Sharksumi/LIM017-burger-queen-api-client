@@ -27,6 +27,7 @@ const Login = () => {
       <main>
         <div id="containerLogin">
           <form
+            data-testid="form-login"
             onSubmit={ handleSubmit}
           >
             <label className = "loginLabel">USUARIO</label>
