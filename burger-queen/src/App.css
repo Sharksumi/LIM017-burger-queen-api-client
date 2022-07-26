@@ -308,8 +308,52 @@ fieldset {
 
 .tittleCard{
   font-size: medium;
+  padding: 5px;
 }
 
+.nameProduct{
+  display: flex;
+  align-items: flex-start;
+}
+
+.infoClient{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+.tableOrder{
+  font-size:12px;
+}
+
+.tableHeadOrder{
+  background: #262626;
+  color: white;
+}
+
+.tableBodyOrder{
+  background-color: #f2f2f2;
+  
+  color: #262626;
+}
+.orderColumn{
+  padding: 5px;
+}
+
+.buttonOrders{
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 15px;
+  width: 35%;
+  background-color: #262626;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase
+}
+
+.messageDelivered{
+  margin: 10px;
+}
 /* Button filter for orders */
 .btnOrderFilter {
   display: flex;

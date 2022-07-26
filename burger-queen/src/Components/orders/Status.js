@@ -27,18 +27,18 @@ console.log(orders)
     switch (currentStatus) {
       case "pending":
         return (
-          <button onClick={() => setOrderStatus("delivering", orderId)}>
+          <button className="buttonOrders" onClick={() => setOrderStatus("delivering", orderId)}>
             Preparado
           </button>
         );
       case "delivering":
         return (
-          <button onClick={() => setOrderStatus("delivered", orderId)}>
+          <button className="buttonOrders" onClick={() => setOrderStatus("delivered", orderId)}>
             Listo
           </button>
         );
       case "delivered":
-        return ( <h4> Entregado </h4>);
+        return ( <h4 className = 'messageDelivered'> Entregado </h4>);
     }
   };
 
@@ -96,25 +96,28 @@ console.log(orders)
               return (
 
                 <div className= {statusTheme(item)} key={item.id}>
-
                   <p id="orderId ">Orden N°: 00{item.id} </p>
-                  <p id="waiterId"> Mesero: {item.userId} </p>
-                  <p id="orderClient"> Cliente: {item.client} </p>
-                  <p> Mesa: {item.tableNum} </p>
+                  <div className = "infoClient">
+                    <p id="waiterId"> Mesero:  <span>{item.userId}</span> </p>
+                    <p id="orderClient"> Cliente:  <span>{item.client}</span> </p>
+                    <p> Mesa:  <span>{item.tableNum}</span> </p>
+
+                  </div>
+                  
                   <div id="orderProducts">
-                    <table>
-                      <thead>
+                    <table className ="tableOrder">
+                      <thead className = " tableHeadOrder">
                         <tr key={item.id}>
                           <td className="tittleCard">PRODUCTOS</td>
                           <td className="tittleCard">CANTIDAD</td>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody className = " tableBodyOrder">
                         {item.products.map((product) => {
                           return (
                             <tr key={product.id}>
-                              <td>{product.name}</td>
-                              <td>{product.qty}</td>
+                              <td className ="nameProduct orderColumn">{product.name}</td>
+                              <td className =" orderColumn">{product.qty}</td>
                             </tr>
                           );
                         })}

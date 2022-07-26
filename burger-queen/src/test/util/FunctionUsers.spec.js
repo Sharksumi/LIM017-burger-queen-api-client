@@ -6,7 +6,7 @@ import {
   deleteUser,
 } from "../../util/FunctionUsers";
 
-jest.mock("axios");
+jest.mock('axios'); 
 
 const objUser = {
   config: {
