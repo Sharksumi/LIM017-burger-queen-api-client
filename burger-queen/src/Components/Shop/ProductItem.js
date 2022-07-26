@@ -1,6 +1,6 @@
-import { getProductsData } from "../../util/getProducts.js";
+import { getProductsData } from "../../util/FunctionProducts.js";
 import React, { useEffect, useState } from "react";
-import { sendToKitchen } from "../../util/sendOrder.js";
+import { sendToKitchen } from "../../util/FunctionOrder.js";
 import { useNavigate } from "react-router";
 
 export const ProductItem = () => {
@@ -78,6 +78,9 @@ export const ProductItem = () => {
 
   //funcion boton enviar a cocina
 
+
+
+
   return (
     <>
       {/* filtro por tipo de item (desayuno/cena) */}
@@ -119,7 +122,7 @@ export const ProductItem = () => {
                   <div className="textCard">
                     <span className="productName cardP">{item.name}</span>
                     <br />
-                    <span className="productprice carP">{item.price}</span>
+                    <span className="productprice carP"> S/{item.price}</span>
                     {/* <button
                       disabled={indexesProductsSelected.includes(item.id)}
                       onClick={() => addToCart(item.id)}
@@ -219,7 +222,7 @@ export const ProductItem = () => {
                 );
               })}
             </section>
-            <div className="order total" class= "orderTotal">
+            <div className="orderTotal">
               <div>
                 <span> TOTAL</span>
                 <span className="orderTotal"> {totalSum} </span>
@@ -234,6 +237,8 @@ export const ProductItem = () => {
                 userId: userId,
                 client: clientName,
                 tableNum: tableNum,
+                dateEntry: new Date().toISOString(),
+                status: 'pending',
                 products: productsSelected.map((x) => ({
                   productId: x.id,
                   name:x.name,

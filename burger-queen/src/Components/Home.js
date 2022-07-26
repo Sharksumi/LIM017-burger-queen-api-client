@@ -1,37 +1,61 @@
-import logoBurguer from './../Assets/logoBurguer.png'
 import React from "react";
-import { ProductItem } from './Shop/ProductItem';
-import { useNavigate } from "react-router-dom";
-import { Link } from 'react-router-dom';
-import Orders from './Orders';
+import { useNavigate } from "react-router";
+import logoBurguer from "./../Assets/logoBurguer.png";
+import menu from "./../Assets/iconsHome/newmenu.png";
+import orders from "./../Assets/iconsHome/ordenes.png";
+import userManagement from "./../Assets/iconsHome/user.png";
+import productos from "./../Assets/iconsHome/masproductos.png";
 
-const Home = () => {
-
-  const navigate = useNavigate ('')
+export const Home = () => {
+  const navigate = useNavigate("");
 
   return (
-    <>
-    <header id="loginHeader">
-      <nav id="loginNav">
-        <img src={logoBurguer} id="logoBurguerNav" alt="logoBurguer" />
-        <ul id="optionNav">
-          <li><Link to="/home">Home</Link></li>
-          <li><Link to="/orders">Orders</Link></li>
-          {/* <li><Link to="/">Home</Link></li> */}
+    <section>
+      <header>
+        <img src={logoBurguer} id="logoBurguer" alt="logoBurguer" />
+      </header>
+      <main className="containerIconHome">
+        <div className="imgHome">
+          <img
+            src={userManagement}
+            id="imgUserManagement"
+            alt="Gestión de Usuarios"
+            
+            onClick={() => navigate("/userManagement")}
+          />
+          <h3> Usuarios </h3>
+        </div>
 
-          {/* <li onClick={() => navigate('/home')}>Home</li>
-          <li onClick={() => navigate('/orders')}>Orders</li>
-          <li>Table</li> */}
-        </ul>
-      </nav>
-      
-    </header>
-    <main id="menuContainer">
-          <ProductItem/>
-    </main>
+				<div className="imgHome">
+        <img
+          src={menu}
+          id="imgMenu"
+          alt="Menú"
+          onClick={() => navigate("/menu")}
+        />
+	       <h3> Menú </h3>
+        </div>
 
-  </>
-);
+				<div className="imgHome">
+        <img
+          src={orders}
+          id="imgOrders"
+          alt="Pedidos"
+          onClick={() => navigate("/orders")}
+        />
+				<h3>Pedidos </h3>
+				</div>
+        
+				<div className="imgHome">
+				<img
+          src={productos}
+          id="imgCreateProducts"
+          alt="productos"
+          onClick={() => navigate("/products")}
+        />
+				<h3>Productos</h3>
+				</div>
+      </main>
+    </section>
+  );
 };
-
-export default Home;

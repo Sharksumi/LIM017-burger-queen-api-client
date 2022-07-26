@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import logoBurguer from "./../Assets/logoBurguer.png";
-import { useState } from "react";
 import { authentication } from "../util/Authentication.js";
 import { useNavigate } from "react-router-dom";
- 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,19 +12,13 @@ const Login = () => {
       e.preventDefault();
       authentication(email, password)
         .then((response) => {
-          // if(email === '' || password === ''){
-          //   const message = document.createElement('p');
-          //   const showMessage =message.setAttribute('class','showMessage')
-          //   showMessage.textContent = 'Debes completar todos los campos solicitados';
-          // }else{
-           localStorage.setItem("accessToken", response);
+          localStorage.setItem("accessToken", response);
           navigate("/home");
-          // }
         })
         .catch((error) => console.log(error));
   }
 
- 
+
   return (
     <>
       <header>
@@ -34,6 +27,7 @@ const Login = () => {
       <main>
         <div id="containerLogin">
           <form
+            data-testid="form-login"
             onSubmit={ handleSubmit}
           >
             <label className = "loginLabel">USUARIO</label>
@@ -45,7 +39,6 @@ const Login = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            {/* <p> resultado: {email}</p> */}
 
             <label className ="loginLabel">CONTRASEÑA</label>
 
