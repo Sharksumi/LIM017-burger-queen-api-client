@@ -122,7 +122,7 @@ export const ProductItem = () => {
                   <div className="textCard">
                     <span className="productName cardP">{item.name}</span>
                     <br />
-                    <span className="productprice carP">{item.price}</span>
+                    <span className="productprice carP"> S/{item.price}</span>
                     {/* <button
                       disabled={indexesProductsSelected.includes(item.id)}
                       onClick={() => addToCart(item.id)}

@@ -16,6 +16,7 @@ describe("MyStopwatch", () => {
         const watchTimer = MyStopwatch ({ startTime, endTime });
 
         render(watchTimer);
+       
         expect( screen.getByTestId('resultCount').textContent).toContain(result)
     })
     it(" it should return null when there is no startTime or endTime", () => {

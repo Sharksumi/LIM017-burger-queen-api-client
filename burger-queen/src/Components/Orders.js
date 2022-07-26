@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { OrderStatus }  from "./orders/Status.js"
 import { NavBar } from "./NavBar";
 
@@ -9,10 +9,10 @@ const Orders = () => {
   
   return (
     <>
-     <header id="loginHeader">
+     <header  id="loginHeader">
       <NavBar/>
       </header>
-      <main>
+      <main data-testid="orderStatus">
         <OrderStatus/>
       </main>
     </>
