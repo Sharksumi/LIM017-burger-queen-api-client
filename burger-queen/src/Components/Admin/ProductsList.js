@@ -158,7 +158,6 @@ export const ProductsList = () => {
             onClick={() =>
               deleteProduct(activeProduct.id)
                 .then((resolve) => {
-                  
                   alert("Borrado con exito");
                   window.location.reload(false);
                 })

@@ -17,6 +17,7 @@ export const sendToKitchen = (payload) => {
     axios.post(urlAxiosKitchen, payload,  config)
     .then((response) =>{
         resolve(response.data)
+        console.log
     })
     .catch((error) =>{
       reject(error)
@@ -29,6 +30,7 @@ export const updateOrderStatus = (payload) => {
     axios.patch(urlAxiosUpdateStatus(payload.id), payload,  config)
     .then((response) =>{
         resolve(response.data)
+        console.log(resolve.data)
     })
     .catch((error) =>{
       reject(error)

@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import logoBurguer from "./../Assets/logoBurguer.png";
-import { useState } from "react";
 import { authentication } from "../util/Authentication.js";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +14,6 @@ const Login = () => {
         .then((response) => {
           localStorage.setItem("accessToken", response);
           navigate("/home");
-          // }
         })
         .catch((error) => console.log(error));
   }
@@ -29,6 +27,7 @@ const Login = () => {
       <main>
         <div id="containerLogin">
           <form
+            data-testid="form-login"
             onSubmit={ handleSubmit}
           >
             <label className = "loginLabel">USUARIO</label>

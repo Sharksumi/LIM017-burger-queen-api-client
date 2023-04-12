@@ -10,11 +10,15 @@ import { UserManagement } from "./Components/Admin/UserManagement";
 import { Products } from "./Components/Products";
 import { Home } from "./Components/Home";
 
+
+
+
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />} />
+        {/* <Route path="/*" element= {<RolesRouter/>} */}
         <Route path="/home" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/orders" element={<Orders />} />

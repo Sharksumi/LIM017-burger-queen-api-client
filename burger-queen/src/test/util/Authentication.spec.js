@@ -7,18 +7,31 @@ describe('authentication',() =>{
     test('should auth successful when  the status: 200 ',() =>{
       const objStatus = {
           status:200, 
-          data: {accessToken:"mesero1"}  
-      } 
+          data: {accessToken:"mesero1",
+                  user: {
+                    email: "anita.borg@systers.xyz",
+                    roles: { admin:true},
+                    id: 1 }
+                }
+      }
+        const userRole= "true";
+        const idUser = " 1";
+
       const emailAuth ="anita.borg@systers.xyz";
       const passwordAuth = "123456"; 
       axios.post.mockResolvedValue(objStatus)
+      // axios.post.mockResolvedValue(objUser)
       return authentication(emailAuth,passwordAuth)
        .then((res)=>{
         expect((res)).toBe("mesero1")
+        // expect((res)).toBe(userRole),
+        // expect((res)).toBe(idUser)
        })
         
     // })
     })
+
+
     test('should show not successful when the status: 400', () =>{
       const emailAuthErr ="alfito@burger.com";
       const passwordAuthErr = "1234567";

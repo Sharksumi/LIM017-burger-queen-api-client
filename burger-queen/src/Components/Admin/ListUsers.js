@@ -1,15 +1,8 @@
-<<<<<<< user-router
-import React, { useEffect, useState } from "react";
-import { deleteUser, getUsers, updateUser } from "../../util/FunctionUsers";
-import ReactModal from "react-modal";
-
-=======
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { deleteUser, getUsers } from "../../util/FunctionUsers";
 import ReactModal from "react-modal";
 import { updateUser } from "../../util/FunctionUsers";
->>>>>>> order
 
 export const ListUsers = () => {
   //hooks para traer al usuario creado
@@ -191,7 +184,7 @@ export const ListUsers = () => {
               <th scope="col">UserID</th>
               <th scope="col">Roles</th>
               <th scope="col">Correo</th>
-              <th scope="col">Contraseña</th>
+              {/* <th scope="col">Contraseña</th> */}
               <th scope="col" colSpan="2">
                 Acciones
               </th>
@@ -204,7 +197,7 @@ export const ListUsers = () => {
                   <th scope="row">{user.id}</th>
                   <td>{user.roles.admin?.toString()}</td>
                   <td>{user.email}</td>
-                  <td>{user.password}</td>
+                  {/* <td>{user.password}</td> */}
                   <td>
                     <i
                       className="fa-solid fa-pen-to-square"

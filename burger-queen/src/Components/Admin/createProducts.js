@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { createNewProduct, editProduct } from "../../util/FunctionProducts";
 import ReactModal from "react-modal";
+import { PrivateRoute } from "../router/RolesRouter";
 
 export const CreateProducts = () => {
   const [productName, setProductName] = useState("");
