@@ -4,6 +4,7 @@ files:
   - source: /vue_sinergia
     destination: /var/www/html/vue_sinergia
     recursive: true
+file_exists_behavior: OVERWRITE
 hooks:
   BeforeInstall:
     - location: before-install.sh
