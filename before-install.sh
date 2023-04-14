@@ -1,2 +1,3 @@
 #!/bin/bash
-mkdir /var/www/html/vue_sinergia
+rm -rf /var/www/html/vue_sinergia
+mkdir -p /var/www/html/vue_sinergia
