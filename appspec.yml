@@ -1,11 +1,18 @@
 version: 0.0
 os: linux
 files:
-  - source: /vue_sinergia
+  - source: /app
+    destination: /var/www/html/vue_sinergia
+    - source: /nod-modules
+    destination: /var/www/html/vue_sinergia
+    - source: /
+    destination: /var/www/html/vue_sinergia
+    - source: /
+    destination: /var/www/html/vue_sinergia
+    - source: /
     destination: /var/www/html/vue_sinergia
     recursive: true
 file_exists_behavior: OVERWRITE
-
 hooks:
   BeforeInstall:
     - location: before-install.sh
