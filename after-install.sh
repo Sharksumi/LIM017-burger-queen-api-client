@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /var/www/html/vue_sinergia
+cp -u /var/www/html/vue_sinergia_backup /var/www/html/vue_sinergia
 # php artisan config:clear
 # php artisan cache:clear
 # php artisan migrate
