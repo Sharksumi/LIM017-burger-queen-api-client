@@ -2,13 +2,9 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /var/www/html/vue_sinergia/
+    destination: /tmp/vue_sinergia/
 file_exists_behavior: OVERWRITE
 hooks:
-  BeforeInstall:
-    - location: before-install.sh
-      timeout: 300
-      runas: root
   AfterInstall:
     - location: after-install.sh
       timeout: 300
