@@ -17,7 +17,15 @@ export const UserManagement = () => {
 
 
   const addToNewUser = (e) => {
-    e.preventDefault();
+    e.preventDefault();    
+          const createNewUser ={
+              email:  email,
+              roles: {admin: rolUser === "true"},
+              password: password,
+          }
+          createNewUsers (createNewUser)
+            .then((res) =>  window.location.reload(false))
+            .catch((error) =>console.log(error))
 
     const createNewUser = {
       email: email,
